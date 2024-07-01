@@ -3,6 +3,8 @@ import 'package:crypto_app/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import 'asset_row.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -76,7 +78,70 @@ class _HomeScreenState extends State<HomeScreen> {
                           'https://s2.coinmarketcap.com/static/img/coins/64x64/74.png'),
                 ],
               ),
-            )
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            const Row(
+              children: [
+                Text(
+                  'My portfolio',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 23),
+                ),
+                Spacer(),
+                Text(
+                  'View all',
+                  style: TextStyle(fontSize: 15),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            const SingleChildScrollView(
+              child: Column(
+                children: [
+                  AssetRow(
+                    title: 'Bitcoin',
+                    ticker: 'BTC',
+                    asseturl:
+                        'https://s2.coinmarketcap.com/static/img/coins/64x64/1.png',
+                    price: '\$ 40,000',
+                    percentageChange: '+ 2.5%',
+                  ),
+                  SizedBox(
+                    height: 14,
+                  ),
+                  AssetRow(
+                      title: 'Ethereum',
+                      ticker: 'ETH',
+                      asseturl:
+                          'https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png',
+                      price: '\$ 4,000',
+                      percentageChange: '+ 0%'),
+                  SizedBox(
+                    height: 14,
+                  ),
+                  AssetRow(
+                      title: 'DogeCoin',
+                      ticker: 'DOGE',
+                      asseturl:
+                          'https://s2.coinmarketcap.com/static/img/coins/64x64/74.png',
+                      price: '\$ 0.03',
+                      percentageChange: '+ 20.5%'),
+                  SizedBox(
+                    height: 14,
+                  ),
+                  AssetRow(
+                      title: 'LiteCoin',
+                      ticker: 'LTC',
+                      asseturl:
+                          'https://s2.coinmarketcap.com/static/img/coins/64x64/2.png',
+                      price: '\$ 74',
+                      percentageChange: '+ 5%'),
+                ],
+              ),
+            ),
           ],
         ),
       ),

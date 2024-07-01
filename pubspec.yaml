@@ -39,6 +39,7 @@ dependencies:
   logger: ^2.3.0
   flutter_screenutil: ^5.9.3
   stacked: ^3.4.3
+  http: ^1.2.0
 
 dev_dependencies:
   flutter_test:
